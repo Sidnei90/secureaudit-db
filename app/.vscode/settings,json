@@ -1,0 +1,6 @@
+{
+  "python.analysis.extraPaths": [
+    "C:/Users/Usuario/OneDrive/Área de Trabalho/Security-DB/app"
+  ],
+  "python.envFile": "${workspaceFolder}/.env"
+}
