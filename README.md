@@ -50,6 +50,7 @@ Security-DB/
 ├── app/
 │   ├── __init__.py           # Configuração do Flask e banco
 │   ├── models.py             # Modelos User e Log
+│   ├── utils.py              # <---- Coloque a função registrar_log aqui
 │   ├── routes.py             # Rotas da aplicação (a criar)
 │   └── ...
 │
