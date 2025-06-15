@@ -1,6 +1,8 @@
 # Security-DB
 
-Projeto Flask com PostgreSQL para gerenciamento básico de usuários e logs, utilizando Flask-Migrate para controle de migrações.
+## Descrição
+
+Security_DB é um projeto em Flask com PostgreSQL para gerenciamento básico de usuários e logs, utilizando Flask-Migrate para controle de migrações.
 
 ---
 
@@ -12,15 +14,18 @@ Projeto Flask com PostgreSQL para gerenciamento básico de usuários e logs, uti
 - Flask-Migrate
 - PostgreSQL
 - python-dotenv
+- psycopg2 (driver PostgreSQL para Python)
+- SQLAlchemy (ORM)
 
 ---
 
-## Configuração do ambiente
+## Instalação
 
 1. Clone o repositório:
-   ```bash
-   git clone <url-do-seu-repositorio>
-   cd Security-DB
+
+```bash
+git clone https://github.com/Sidnei90/secureaudit-db.git
+cd secureaudit-db
 
 ## Crie e ative o ambiente virtual
 
@@ -34,7 +39,9 @@ pip install -r requirements.txt
 
 ## Configure as variáveis de ambiente criando um arquivo .env na raiz do projeto com a variável do banco:
 
-DATABASE_URL=postgresql://postgres:<sua_senha>@localhost:5432/security_db
+set DATABASE_URL=postgresql://usuario:senha@localhost:5432/seubanco
+# Linux / macOS
+export DATABASE_URL=postgresql://usuario:senha@localhost:5432/seubanco
 
 ## Estrutura do projeto
 
@@ -43,6 +50,7 @@ Security-DB/
 ├── app/
 │   ├── __init__.py           # Configuração do Flask e banco
 │   ├── models.py             # Modelos User e Log
+│   ├── utils.py              # <---- Coloque a função registrar_log aqui
 │   ├── routes.py             # Rotas da aplicação (a criar)
 │   └── ...
 │
@@ -69,5 +77,27 @@ flask db upgrade
 
 python test_insert.py
 
-## Próximos passos
+## Execute o projeto
+
+flask run
+
+## Status do projeto
+
+Em desenvolvimento — funcionalidades básicas implementadas, mas melhorias e novos recursos ainda em andamento.
+
+## Como contribuir
+
+Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar pull requests.
+
+## Licença
+
+MIT license © Sidnei Moura
+
+## Contato
+
+Sidnei Moura – https://github.com/Sidnei90
+
+
+
+
 
