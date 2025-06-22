@@ -61,7 +61,7 @@
     <script>
         async function carregarLogs() {
             try {
-                const response = await fetch('/api/logs');
+                const response = await fetch('/logs/api');
                 if (!response.ok) {
                     throw new Error('Erro ao carregar logs');
                 }

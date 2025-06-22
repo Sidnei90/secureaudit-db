@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cálculo de Horas Extras</title>
+</head>
+<body>
+    <h1>Calcular Horas Extras</h1>
+    <form method="POST">
+        <label for="salario">Salário (R$):</label>
+        <input type="number" name="salario" id="salario" step="0.01" min="0" required value="{{ request.form.salario or '' }}">
+
+        <label for="horas_extras">Horas Extras:</label>
+        <input type="number" name="horas_extras" id="horas_extras" step="0.01" min="0" required value="{{ request.form.horas_extras or '' }}">
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+        <p><strong>Valor total das horas extras:</strong> R$ {{ resultado | round(2) }}</p>
+    {% endif %}
+</body>
+</html>

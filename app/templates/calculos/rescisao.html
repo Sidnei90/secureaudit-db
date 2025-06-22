@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cálculo de Rescisão</title>
+</head>
+<body>
+    <h1>Calcular Rescisão</h1>
+    <form method="POST">
+        <label for="salario">Salário (R$):</label>
+        <input type="number" name="salario" id="salario" step="0.01" min="0" required value="{{ request.form.salario or '' }}">
+
+        <label for="dias_trabalhados">Dias Trabalhados:</label>
+        <input type="number" name="dias_trabalhados" id="dias_trabalhados" min="0" required value="{{ request.form.dias_trabalhados or '' }}">
+
+        <label for="meses_trabalhados">Meses Trabalhados:</label>
+        <input type="number" name="meses_trabalhados" id="meses_trabalhados" min="0" required value="{{ request.form.meses_trabalhados or '' }}">
+
+        <label for="ferias_vencidas">Férias Vencidas:</label>
+        <input type="checkbox" name="ferias_vencidas" id="ferias_vencidas" {% if request.form.get('ferias_vencidas') %}checked{% endif %}>
+
+        <label for="saldo_fgts">Saldo do FGTS (R$):</label>
+        <input type="number" name="saldo_fgts" id="saldo_fgts" step="0.01" min="0" required value="{{ request.form.saldo_fgts or '' }}">
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado %}
+        <h2>Detalhes da Rescisão</h2>
+        <ul>
+            <li><strong>Saldo de salário:</strong> R$ {{ resultado.saldo_salario }}</li>
+            <li><strong>Aviso prévio:</strong> R$ {{ resultado.aviso_previo }}</li>
+            <li><strong>Férias vencidas:</strong> R$ {{ resultado.ferias_vencidas }}</li>
+            <li><strong>Férias proporcionais:</strong> R$ {{ resultado.ferias_proporcionais }}</li>
+            <li><strong>13º salário:</strong> R$ {{ resultado.decimo_terceiro }}</li>
+            <li><strong>Multa do FGTS (40%):</strong> R$ {{ resultado.multa_fgts }}</li>
+        </ul>
+        <p><strong>Total da rescisão:</strong> R$ {{ resultado.total }}</p>
+    {% endif %}
+</body>
+</html>

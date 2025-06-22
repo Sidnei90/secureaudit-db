@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cálculo de Férias</title>
+</head>
+<body>
+    <h1>Calcular Férias</h1>
+    <form method="POST">
+        <label for="salario">Salário (R$):</label>
+        <input type="number" name="salario" id="salario" step="0.01" min="0" required value="{{ request.form.salario or '' }}">
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+        <p><strong>Valor total das férias:</strong> R$ {{ resultado | round(2) }}</p>
+    {% endif %}
+</body>
+</html>

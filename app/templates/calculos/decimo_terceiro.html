@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cálculo do 13º Salário</title>
+</head>
+<body>
+    <h1>Calcular 13º Salário</h1>
+    <form method="POST">
+        <label for="salario">Salário (R$):</label>
+        <input type="number" name="salario" id="salario" step="0.01" min="0" required value="{{ request.form.salario or '' }}">
+
+        <label for="meses">Meses Trabalhados:</label>
+        <input type="number" name="meses" id="meses" min="0" required value="{{ request.form.meses or '' }}">
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+        <p><strong>Valor proporcional do 13º salário:</strong> R$ {{ resultado | round(2) }}</p>
+    {% endif %}
+</body>
+</html>
