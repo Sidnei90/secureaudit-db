@@ -1,29 +1,3 @@
-# Security-DB
-
-## Descrição
-
-Security_DB é um projeto em Flask com PostgreSQL para gerenciamento básico de usuários e logs, utilizando Flask-Migrate para controle de migrações.
-
----
-
-## Tecnologias usadas
-
-- Python 3.x
-- Flask
-- Flask-SQLAlchemy
-- Flask-Migrate
-- PostgreSQL
-- python-dotenv
-- psycopg2 (driver PostgreSQL para Python)
-- SQLAlchemy (ORM)
-
----
-
-## Instalação
-
-1. Clone o repositório:
-
-```bash
 git clone https://github.com/Sidnei90/secureaudit-db.git
 cd secureaudit-db
 
@@ -50,8 +24,9 @@ Security-DB/
 ├── app/
 │   ├── __init__.py           # Configuração do Flask e banco
 │   ├── models.py             # Modelos User e Log
-│   ├── utils.py              # <---- Coloque a função registrar_log aqui
-│   ├── routes.py             # Rotas da aplicação (a criar)
+│   ├── utils.py              # Funções auxiliares (ex: registrar_log, cálculos)
+│   ├── routes.py             # Rotas da aplicação (cálculos, usuários, etc)
+│   ├── templates/            # HTMLs organizados
 │   └── ...
 │
 ├── migrations/               # Migrações do banco geradas pelo Flask-Migrate
@@ -68,6 +43,27 @@ Security-DB/
 
 - Log: Registro de ações do usuário, com user_id como chave estrangeira para o usuário que realizou a ação.
 
+## Funcionalidades atuais
+
+- Cálculo de salário líquido
+- Cálculo de 13º salário proporcional
+- Cálculo de rescisão trabalhista
+- Cálculo de férias + 1/3 constitucional
+- Registro de logs por usuário
+- Interface web via Flask + HTML
+- Templates organizados por rota
+- Separação de responsabilidades em módulos
+- Testes de banco e inserção
+- Migrações de banco de dados
+- Pronto para deploy com variáveis de ambiente
+
+## Funcionalidades planejadas
+
+- Exportar os cálculos em PDF
+- Melhorar responsividade da interface (Bootstrap)
+- Autenticação com JWT para API
+- Dashboard de ações e estatísticas
+
 ## Migrações
 
 flask db migrate -m "Mensagem da migração"
@@ -83,7 +79,8 @@ flask run
 
 ## Status do projeto
 
-Em desenvolvimento — funcionalidades básicas implementadas, mas melhorias e novos recursos ainda em andamento.
+✅ Em andamento — funcionalidades principais implementadas.  
+🔄 Em fase de melhorias e expansão de recursos.
 
 ## Como contribuir
 
@@ -96,8 +93,3 @@ MIT license © Sidnei Moura
 ## Contato
 
 Sidnei Moura – https://github.com/Sidnei90
-
-
-
-
-
