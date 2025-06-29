@@ -20,12 +20,18 @@ export DATABASE_URL=postgresql://usuario:senha@localhost:5432/seubanco
 ## Estrutura do projeto
 
 Security-DB/
-│
+
+
 ├── app/
 │   ├── __init__.py           # Configuração do Flask e banco
 │   ├── models.py             # Modelos User e Log
+│   ├── forms.py              # Para fomulários e registros de logins
 │   ├── utils.py              # Funções auxiliares (ex: registrar_log, cálculos)
-│   ├── routes.py             # Rotas da aplicação (cálculos, usuários, etc)
+│   ├── routes                # Rotas da aplicação (cálculos, usuários, etc)
+│   │   ├── __init__.py  
+│   │   ├── calculations.py
+│   │   ├── logs.py
+│   │   └── users.py
 │   ├── templates/            # HTMLs organizados
 │   └── ...
 │
