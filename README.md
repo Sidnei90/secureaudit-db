@@ -90,7 +90,7 @@ flask run
 
 ## Como contribuir
 
-Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar pull requests.
+Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar pull requests. ^^
 
 ## Licença
 
